@@ -31,7 +31,7 @@ class _MovieListingState extends State<MovieListing> {
             Container(
               padding: const EdgeInsets.all(5),
               child: const Text(
-                'Featured Movie Title',
+                'Movie Title',
                 style: TextStyle(
                   fontSize: 22,
                   color: cinemaFontWhite,
@@ -41,7 +41,7 @@ class _MovieListingState extends State<MovieListing> {
             ),
             const SizedBox(height: 4),
             const Text(
-              'A short and captivating description.',
+              'The best movie this october!.',
               style: TextStyle(
                 color: cinemaFontMuted,
                 fontSize: 14,
