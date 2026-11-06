@@ -1,0 +1,15 @@
+// Clayface Poster
+Image.asset(
+  'assets/images/clayface.jeg.jfif',
+  width: 150,
+  height: 220,
+  fit: BoxFit.cover,
+),
+
+// Dune 3 Poster
+Image.asset(
+  'assets/images/dune3.jpg.jfif',
+  width: 150,
+  height: 220,
+  fit: BoxFit.cover,
+),
