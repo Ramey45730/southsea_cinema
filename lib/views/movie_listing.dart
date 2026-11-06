@@ -26,7 +26,7 @@ class _MovieListingState extends State<MovieListing> {
       drawer: const NavDrawer(),
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.end,
           children: [
             Container(
               padding: const EdgeInsets.all(5),
