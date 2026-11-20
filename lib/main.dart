@@ -18,6 +18,7 @@ class SouthseaCinemaApp extends StatelessWidget {
         scaffoldBackgroundColor: cinemaBackground,
         colorScheme: ColorScheme.fromSeed(
           seedColor: cinemaBrand,
+          brightness: Brightness.dark,
           primary: cinemaBrand,
           surface: cinemaSurface,
         ),
