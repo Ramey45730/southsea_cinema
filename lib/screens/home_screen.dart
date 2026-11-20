@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../models/movie.dart';
+import '../repositories/movie_repository.dart';
 import '../widgets/movie_card.dart';
 
 class HomeScreen extends StatelessWidget {
