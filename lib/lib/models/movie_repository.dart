@@ -23,7 +23,7 @@ class MovieRepository {
       Movie(
         id: 'movie_001',
         title: 'Clayface',
-        description: 'A terrifying dark thriller following Gotham’s morphing villain.',
+        description: "A terrifying dark thriller following Gotham's morphing villain.",
         imagePath: 'assets/images/clayface.jpg',
         price: 10.50,
       ),
