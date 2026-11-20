@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:southsea_cinema/constants.dart';
 import 'package:southsea_cinema/views/home_view.dart';
 import 'package:southsea_cinema/views/movie_listing.dart';
-import 'package:flutter/material.dart';
 void main() {
   runApp(const SouthseaCinemaApp());
 }
@@ -29,5 +28,13 @@ class SouthseaCinemaApp extends StatelessWidget {
         '/listing': (context) => const MovieListing(),
       },
     );
+  }
+}
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const SouthseaCinemaApp();
   }
 }
