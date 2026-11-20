@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:southsea_cinema/constants.dart';
+import 'package:southsea_cinema/views/movie_listing.dart';
 import 'package:southsea_cinema/repositories/movie_repository.dart';
 import 'package:southsea_cinema/widgets/nav_drawer.dart';
 import 'package:southsea_cinema/widgets/movie_card.dart';
@@ -45,7 +46,18 @@ class HomeView extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 12),
-          for (final movie in movies) MovieCard(movie: movie),
+          for (final movie in movies)
+            MovieCard(
+              movie: movie,
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => MovieListing(movie: movie),
+                  ),
+                );
+              },
+            ),
         ],
       ),
     );

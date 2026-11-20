@@ -1,9 +1,16 @@
-import 'package:flutter/material.dart';
+
+.import 'package:flutter/material.dart';
 import 'package:southsea_cinema/constants.dart';
+import 'package:southsea_cinema/models/movie.dart';
 import 'package:southsea_cinema/widgets/nav_drawer.dart';
 
 class MovieListing extends StatefulWidget {
-  const MovieListing({super.key});
+  final Movie movie;
+
+  const MovieListing({
+    super.key,
+    required this.movie,
+  });
 
   @override
   State<MovieListing> createState() => _MovieListingState();
@@ -30,8 +37,8 @@ class _MovieListingState extends State<MovieListing> {
           children: [
             Container(
               padding: const EdgeInsets.all(5),
-              child: const Text(
-                'Movie Title',
+              child: Text(
+                widget.movie.title,
                 style: TextStyle(
                   fontSize: 22,
                   color: cinemaFontWhite,
@@ -40,18 +47,28 @@ class _MovieListingState extends State<MovieListing> {
               ),
             ),
             const SizedBox(height: 4),
-            const Text(
-              'The best movie this october!.',
-              style: TextStyle(
+            Text(
+              widget.movie.description,
+              style: const TextStyle(
                 color: cinemaFontMuted,
                 fontSize: 14,
               ),
             ),
             const SizedBox(height: 40),
+            Text(
+              widget.movie.formattedPrice,
+              style: const TextStyle(
+                color: cinemaBrand,
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            const SizedBox(height: 20),
             DropdownMenu<int>(
               initialSelection: _ticketQuantity,
               onSelected: (val) => setState(() => _ticketQuantity = val ?? 1),
-              dropdownMenuEntries: List.generate(5, (i) => DropdownMenuEntry(value: i + 1, label: '${i + 1}')),
+              dropdownMenuEntries: List.generate(
+                  5, (i) => DropdownMenuEntry(value: i + 1, label: '${i + 1}')),
             ),
             const SizedBox(height: 18),
             ElevatedButton(
@@ -62,7 +79,8 @@ class _MovieListingState extends State<MovieListing> {
                   borderRadius: BorderRadius.zero,
                 ),
               ),
-              onPressed: () => setState(() => _bookingMessage = 'Added $_ticketQuantity tickets to the order'),
+              onPressed: () => setState(() => _bookingMessage =
+                  'Added $_ticketQuantity tickets to the order'),
               child: const Text('Add to order'),
             ),
             const SizedBox(height: 12),
